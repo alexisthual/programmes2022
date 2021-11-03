@@ -25,6 +25,7 @@
     "plugin:jest/style"
   ],
   "rules": {
+    "no-param-reassign": [2, { "props": false }],
     "jest/prefer-strict-equal": "error",
     "jest/prefer-to-have-length": "warn",
     "prettier/prettier": "error",

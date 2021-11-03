@@ -1,0 +1,34 @@
+- id: jlm
+  name: Jean-Luc Mélenchon
+  url: https://melenchon2022.fr/
+- id: em
+  name: Emmanuel Macron
+- id: ah
+  name: Anne Hidalgo
+  url: https://www.2022avechidalgo.fr/
+- id: yj
+  name: Yannick Jadot
+  url: https://www.2022lecologie.fr/
+- id: mlp
+  name: Marine Le Pen
+- id: ez
+  name: Éric Zemmour
+- id: am
+  name: Arnaud Montebourg
+  url: https://laremontada.fr/
+- id: nc1
+  name: Nouveau
+- id: nc2
+  name: Nouveau
+- id: nc3
+  name: Nouveau
+- id: nc4
+  name: Nouveau
+- id: nc5
+  name: Nouveau
+- id: nc6
+  name: Nouveau
+- id: nc7
+  name: Nouveau
+- id: nc8
+  name: Nouveau

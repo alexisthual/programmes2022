@@ -1,0 +1,79 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "src/styles/tailwindColors";
+
+body {
+  position: relative;
+}
+
+input:checked ~ .dot {
+  transform: translateX(100%);
+}
+
+main {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#toolbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+#main-table {
+  position: relative;
+  width: 100vw;
+  overflow: auto;
+
+  table {
+    table-layout: fixed;
+    min-width: 100vw;
+    overflow: auto;
+
+    thead th {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+    }
+
+    thead th:nth-child(1) {
+      z-index: 10 !important;
+    }
+
+    tbody {
+      tr:nth-child(2n) td {
+        background-color: $gray-50;
+      }
+
+      tr:nth-child(2n) td:nth-child(1) {
+        background-color: $gray-100;
+      }
+
+      tr:nth-child(2n + 1) td {
+        background-color: $gray-100;
+      }
+
+      tr:nth-child(2n + 1) td:nth-child(1) {
+        background-color: $gray-200;
+      }
+    }
+
+    tr th:nth-child(1),
+    tr td:nth-child(1) {
+      z-index: 2;
+      position: -webkit-sticky;
+      position: sticky;
+      left: 0;
+      width: 150px;
+    }
+
+    tr th:not(:nth-child(1)),
+    tr td:not(:nth-child(1)) {
+      width: 100px;
+      overflow: hidden;
+    }
+  }
+}

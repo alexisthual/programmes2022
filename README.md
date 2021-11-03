@@ -1,64 +1,27 @@
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/26466516/107675788-31f54e00-6c77-11eb-96c9-58fd8a4c69ac.png" alt="Gatsby and TypeScript">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&style=for-the-badge&color=24B36B&labelColor=000000" alt="PRs welcome!" />
-
-  <img alt="License" src="https://img.shields.io/github/license/jpedroschmitz/gatsby-starter-ts?style=for-the-badge&color=24B36B&labelColor=000000">
-
-  <a href="https://twitter.com/intent/follow?screen_name=jpedroschmitz">
-    <img src="https://img.shields.io/twitter/follow/jpedroschmitz?style=for-the-badge&color=24B36B&labelColor=000000" alt="Follow @jpedroschmitz" />
-  </a>
-</p>
+<img alt="License" src="https://img.shields.io/github/license/alexisthual/programmes2022?style=for-the-badge&color=34D399&labelColor=000000">
 
 <br>
 
-A TypeScript starter for Gatsby. No plugins and styling. Exactly the necessary to start 🔥
+# Programmes 2022
 
-No plugins installed, great for advanced users.
+**Programmes 2022** is an open-source web app for comparing programs of French presidential candidates.
 
-- 📏 **ESLint** — Pluggable JavaScript linter
-- 💖 **Prettier** - Opinionated Code Formatter
-- 🐶 **Husky** — Use git hooks with ease
-- 📄 **Commitizen** - Conventional commit messages CLI
-- 🐐 **Tests** - Jest and Testing Library
-- 🚓 **Commitlint** - Lint commit messages
-- 🖌 **Renovate** - Dependency update tool
-- 🚫 **lint-staged** - Run linters against staged git files
-- 👷 **PR Workflow** - Run Type Check & Linters on pull requests
-- 🗂 **Root import** - Import folders and files using the `@` prefix.
+## Contributing
 
-## 🚀 Getting started
+### Adding information
 
-The best way to start with this template is using the Gatsby CLI.
+Want to contribute information to this platform? Either write a new issue in the Issues section, or directly submit a Pull Request implementing these changes.
 
+All data are stored under `./assets/data`.
+
+### Adding features
+
+We're open to including new features to the platform, so feel free to join the dev team!
+
+## Developping
+
+Clone this repo and run
 ```
-npx gatsby new starter-ts https://github.com/jpedroschmitz/gatsby-starter-ts
+yarn
+yarn start
 ```
-
-If you prefer you can clone this repository and run the following commands inside the project folder:
-
-> By default, this starter uses Yarn, but this choice is yours. If you'd like to switch to npm, delete the `yarn.lock` file, install the dependencies with `npm install`, and change the CI workflows, Husky Git hooks, and lint-staged steps to use npm commands.
-
-1. `yarn`;
-2. `yarn start`;
-
-To view the project you can open `http://localhost:8000`.
-
-## 🤝 Contributing
-
-1. Fork this repository;
-2. Create your branch: `git checkout -b my-new-feature`;
-3. Commit your changes: `git commit -m 'Add some feature'`;
-4. Push to the branch: `git push origin my-new-feature`.
-
-**After your pull request is merged**, you can safely delete your branch.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
-
----
-
-Made with ♥ by João Pedro Schmitz
