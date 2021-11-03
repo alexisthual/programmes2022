@@ -8,8 +8,13 @@ body {
   position: relative;
 }
 
-input:checked ~ .dot {
-  transform: translateX(100%);
+#simplified-toggle {
+  .dot {
+    transform: translateX(0%);
+  }
+  &.simplified .dot {
+    transform: translateX(140%);
+  }
 }
 
 main {
