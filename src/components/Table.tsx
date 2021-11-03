@@ -21,7 +21,7 @@ const Table: React.FC<Props> = ({ candidates, subjects, positions }) => {
 
   return (
     <div id="main-table">
-      <table className="min-w-full">
+      <table className="min-w-full h-full">
         <thead>
           <tr>
             <th className="bg-gray-100 z-10 p-3 uppercase">
@@ -80,11 +80,11 @@ const Table: React.FC<Props> = ({ candidates, subjects, positions }) => {
                 }
 
                 return (
-                  <td key={candidate.yamlId}>
+                  <td key={candidate.yamlId} className="h-full w-full p-0">
                     <div
                       className={`${
                         color !== null ? `bg-${color} cursor-pointer` : ``
-                      } p-3 whitespace-nowrap`}
+                      } h-full w-full p-3 whitespace-nowrap`}
                       onClick={() => {
                         if (positionId in positionPerKey) {
                           setContext({
