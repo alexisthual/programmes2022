@@ -31,7 +31,7 @@
   "dependencies": {
     "@tailwindcss/forms": "0.3.4",
     "autoprefixer": "10.4.0",
-    "gatsby": "4.0.0",
+    "gatsby": "4.1.0",
     "gatsby-plugin-postcss": "5.0.0",
     "gatsby-plugin-sass": "5.0.0",
     "gatsby-plugin-use-query-params": "1.0.1",
