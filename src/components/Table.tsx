@@ -6,11 +6,11 @@ import { Candidate, Position, Subject } from "src/types";
 
 interface Props {
   candidates?: Candidate[];
-  subjects?: Subject[];
+  rows?: Subject[];
   positions?: Position[];
 }
 
-const Table: React.FC<Props> = ({ candidates, subjects, positions }) => {
+const Table: React.FC<Props> = ({ candidates, rows, positions }) => {
   const { simplified, setContext } = React.useContext(AppContext);
   const positionPerKey = Object.assign(
     {},
@@ -37,76 +37,87 @@ const Table: React.FC<Props> = ({ candidates, subjects, positions }) => {
           </tr>
         </thead>
         <tbody>
-          {subjects.map((subject: Subject) => (
-            <tr key={subject.yamlId}>
-              <td className="p-3">
-                <div className="text-sm text-right font-medium text-gray-900">
-                  {subject.label}
-                </div>
-              </td>
-              {candidates.map((candidate: Candidate, ckey: number) => {
-                const positionId = `${candidate.yamlId}_${subject.yamlId}`;
+          {rows.map((row: Subject) =>
+            row.isDomain ? (
+              <tr key={row.label} className="row-domain">
+                <td className="px-3 py-1">
+                  <div className="text-sm text-right font-bold text-gray-900">
+                    {row.label}
+                  </div>
+                </td>
+                <td colSpan={candidates.length} />
+              </tr>
+            ) : (
+              <tr key={row.id} className="row-subject">
+                <td className="p-3">
+                  <div className="text-sm text-right font-medium text-gray-900">
+                    {row.label}
+                  </div>
+                </td>
+                {candidates.map((candidate: Candidate, ckey: number) => {
+                  const positionId = `${candidate.yamlId}_${row.id}`;
 
-                let color = null;
-                let content = null;
+                  let color = null;
+                  let content = null;
 
-                if (positionId in positionPerKey) {
-                  content = (
-                    <div className="text-sm text-gray-900">
-                      {simplified ? null : positionPerKey[positionId].text}
-                    </div>
-                  );
-                  switch (positionPerKey[positionId].rank) {
-                    case -2:
-                      color = `red-500`;
-                      break;
-                    case -1:
-                      color = `red-300`;
-                      break;
-                    case 0:
-                      color = `gray-300`;
-                      break;
-                    case 1:
-                      color = `green-300`;
-                      break;
-                    case 2:
-                      color = `green-500`;
-                      break;
-                    default:
-                      break;
+                  if (positionId in positionPerKey) {
+                    content = (
+                      <div className="text-sm text-gray-900">
+                        {simplified ? null : positionPerKey[positionId].text}
+                      </div>
+                    );
+                    switch (positionPerKey[positionId].rank) {
+                      case -2:
+                        color = `red-500`;
+                        break;
+                      case -1:
+                        color = `red-300`;
+                        break;
+                      case 0:
+                        color = `gray-300`;
+                        break;
+                      case 1:
+                        color = `green-300`;
+                        break;
+                      case 2:
+                        color = `green-500`;
+                        break;
+                      default:
+                        break;
+                    }
                   }
-                }
 
-                return (
-                  <td key={candidate.yamlId} className="h-full w-full p-0">
-                    <div
-                      className={`${
-                        color !== null ? `bg-${color} cursor-pointer` : ``
-                      } h-full w-full text-center flex flex-row items-center justify-center`}
-                      onClick={() => {
-                        if (positionId in positionPerKey) {
-                          setContext({
-                            positionId,
-                          });
-                        }
-                      }}
-                      onKeyPress={() => {
-                        if (positionId in positionPerKey) {
-                          setContext({
-                            positionId,
-                          });
-                        }
-                      }}
-                      role="button"
-                      tabIndex={ckey}
-                    >
-                      {content}
-                    </div>
-                  </td>
-                );
-              })}
-            </tr>
-          ))}
+                  return (
+                    <td key={candidate.yamlId} className="h-full w-full p-0">
+                      <div
+                        className={`${
+                          color !== null ? `bg-${color} cursor-pointer` : ``
+                        } h-full w-full text-center flex flex-row items-center justify-center`}
+                        onClick={() => {
+                          if (positionId in positionPerKey) {
+                            setContext({
+                              positionId,
+                            });
+                          }
+                        }}
+                        onKeyPress={() => {
+                          if (positionId in positionPerKey) {
+                            setContext({
+                              positionId,
+                            });
+                          }
+                        }}
+                        role="button"
+                        tabIndex={ckey}
+                      >
+                        {content}
+                      </div>
+                    </td>
+                  );
+                })}
+              </tr>
+            ),
+          )}
         </tbody>
       </table>
     </div>
@@ -115,7 +126,7 @@ const Table: React.FC<Props> = ({ candidates, subjects, positions }) => {
 
 Table.defaultProps = {
   candidates: [],
-  subjects: [],
+  rows: [],
   positions: [],
 };
 

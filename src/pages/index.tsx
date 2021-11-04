@@ -6,11 +6,22 @@ import PositionPanel from "src/components/PositionPanel";
 import Table from "src/components/Table";
 import SettingsButton from "src/components/SettingsButton";
 import SettingsPanel from "src/components/SettingsPanel";
-import { Position } from "src/types";
+import { Candidate, Position, Subject } from "src/types";
 
 const Home: React.FC<PageProps> = ({ data }) => {
-  const candidates = data.allCandidatesYaml.edges.map((node: any) => node.node);
-  const subjects = data.allSubjectsYaml.edges.map((node: any) => node.node);
+  console.log(data);
+  const candidates: Candidate[] = data.allCandidatesYaml.edges.map(
+    (node: any) => node.node,
+  );
+
+  const tableRows: Subject[] = [];
+  data.allSubjectsYaml.edges.forEach((node: any) => {
+    tableRows.push({ isDomain: true, label: node.node.title });
+    node.node.subjects.forEach((subject: Subject) => {
+      tableRows.push({ isDomain: false, ...subject });
+    });
+  });
+
   const positions = data.allPositionsYaml.edges.map((node: any) => {
     const info = node.node.parent.name.split(`_`);
     return {
@@ -32,11 +43,7 @@ const Home: React.FC<PageProps> = ({ data }) => {
 
   return (
     <main className="flex flex-col">
-      <Table
-        candidates={candidates}
-        subjects={subjects}
-        positions={positions}
-      />
+      <Table candidates={candidates} rows={tableRows} positions={positions} />
       <SettingsButton onClick={() => setShowSettings(true)} />
       {showSettings ? (
         <SettingsPanel onClose={() => setShowSettings(false)} />
@@ -65,8 +72,11 @@ export const query = graphql`
     allSubjectsYaml {
       edges {
         node {
-          yamlId
-          label
+          title
+          subjects {
+            id
+            label
+          }
         }
       }
     }

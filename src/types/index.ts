@@ -5,7 +5,8 @@ export interface Candidate {
 }
 
 export interface Subject {
-  yamlId: string;
+  isDomain: boolean;
+  id?: string;
   label: string;
 }
 

@@ -1,28 +1,42 @@
-- id: "0000"
-  label: Pour réduire l'immigration ?
-- id: "0100"
-  label: Pour sortir du nucléaire ?
-- id: "0200"
-  label: Pour le maintien de la chasse ?
-- id: "0300"
-  label: Pour l'Impôt de Solidarité sur la Fortune ?
-- id: "0400"
-  label: Pour un Revenu Universel ?
-- id: "0500"
-  label: Pour revaloriser le SMIC ?
-- id: "0600"
-  label: Nouveau sujet
-- id: "0700"
-  label: Nouveau sujet
-- id: "0800"
-  label: Nouveau sujet
-- id: "0900"
-  label: Nouveau sujet
-- id: "1000"
-  label: Nouveau sujet
-- id: "1100"
-  label: Nouveau sujet
-- id: "1200"
-  label: Nouveau sujet
-- id: "1300"
-  label: Nouveau sujet
+- title: "Transition écologique"
+  subjects:
+    - id: "0100"
+      label: Pour sortir du nucléaire ?
+- title: "Finances publiques"
+  subjects:
+    - id: "0300"
+      label: Pour l'Impôt de Solidarité sur la Fortune ?
+    - id: "0400"
+      label: Pour un Revenu Universel ?
+- title: "Travail et emploi"
+  subjects:
+    - id: "0500"
+      label: Pour revaloriser le SMIC ?
+- title: "Immigration"
+  subjects:
+    - id: "0000"
+      label: Pour réduire l'immigration ?
+- title: "Chasse"
+  subjects:
+    - id: "0200"
+      label: Pour le maintien de la chasse ?
+- title: "Nouveau domaine"
+  subjects:
+    - id: "0600"
+      label: Nouveau sujet
+    - id: "0700"
+      label: Nouveau sujet
+    - id: "0800"
+      label: Nouveau sujet
+    - id: "0900"
+      label: Nouveau sujet
+- title: "Nouveau domaine 2"
+  subjects:
+    - id: "1000"
+      label: Nouveau sujet
+    - id: "1100"
+      label: Nouveau sujet
+    - id: "1200"
+      label: Nouveau sujet
+    - id: "1300"
+      label: Nouveau sujet
