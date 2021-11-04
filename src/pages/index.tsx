@@ -9,7 +9,6 @@ import SettingsPanel from "src/components/SettingsPanel";
 import { Candidate, Position, Subject } from "src/types";
 
 const Home: React.FC<PageProps> = ({ data }) => {
-  console.log(data);
   const candidates: Candidate[] = data.allCandidatesYaml.edges.map(
     (node: any) => node.node,
   );
