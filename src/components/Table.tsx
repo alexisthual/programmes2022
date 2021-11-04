@@ -21,17 +21,15 @@ const Table: React.FC<Props> = ({ candidates, subjects, positions }) => {
 
   return (
     <div id="main-table">
-      <table className="min-w-full h-full">
+      <table className="h-full">
         <thead>
           <tr>
             <th className="bg-gray-100 z-10 p-3 uppercase">
-              <div className="flex-grow">
-                <Search />
-              </div>
+              <Search />
             </th>
             {candidates.map((candidate: Candidate) => (
               <th key={candidate.yamlId} className="bg-gray-50 p-3 uppercase">
-                <div className="text-sm text-center font-medium text-gray-900">
+                <div className="text-sm font-normal text-center text-gray-900">
                   {candidate.name}
                 </div>
               </th>
@@ -41,7 +39,7 @@ const Table: React.FC<Props> = ({ candidates, subjects, positions }) => {
         <tbody>
           {subjects.map((subject: Subject) => (
             <tr key={subject.yamlId}>
-              <td className="p-3 whitespace-nowrap">
+              <td className="p-3">
                 <div className="text-sm text-right font-medium text-gray-900">
                   {subject.label}
                 </div>
@@ -84,7 +82,7 @@ const Table: React.FC<Props> = ({ candidates, subjects, positions }) => {
                     <div
                       className={`${
                         color !== null ? `bg-${color} cursor-pointer` : ``
-                      } h-full w-full p-3 whitespace-nowrap`}
+                      } h-full w-full text-center flex flex-row items-center justify-center`}
                       onClick={() => {
                         if (positionId in positionPerKey) {
                           setContext({

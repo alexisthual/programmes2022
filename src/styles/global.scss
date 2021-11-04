@@ -30,7 +30,6 @@ main {
 
 #main-table {
   position: relative;
-  width: 100vw;
   overflow: auto;
 
   table {
@@ -72,12 +71,14 @@ main {
       position: -webkit-sticky;
       position: sticky;
       left: 0;
-      width: 150px;
+      max-width: 175px;
+      min-width: 175px;
     }
 
     tr th:not(:nth-child(1)),
     tr td:not(:nth-child(1)) {
-      width: 100px;
+      min-width: 100px;
+      max-width: 100px;
       overflow: hidden;
     }
   }
