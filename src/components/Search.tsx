@@ -29,7 +29,7 @@ const Search: React.FC<unknown> = () => {
         type="text"
         name="price"
         id="price"
-        className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-2 sm:text-sm border-gray-300 rounded-md"
+        className="focus:ring-blue-500 focus:border-blue-500 block w-full pl-7 pr-2 sm:text-sm border-gray-300 rounded-md"
         placeholder="Rechercher..."
         onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
           event.preventDefault();
