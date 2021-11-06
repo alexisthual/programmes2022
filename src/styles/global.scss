@@ -50,22 +50,14 @@ main {
     }
 
     tbody {
-      tr.row-subject:nth-of-type(2n) {
+      tr.row-subject.even {
         td {
           background-color: $white;
         }
-
-        td:nth-child(1) {
-          background-color: $gray-50;
-        }
       }
 
-      tr.row-subject:nth-of-type(2n + 1) {
+      tr.row-subject.odd {
         td {
-          background-color: $gray-50;
-        }
-
-        td:nth-child(1) {
           background-color: $gray-100;
         }
       }
@@ -76,6 +68,11 @@ main {
         position: -webkit-sticky;
         position: sticky;
         top: 66px;
+
+        border-bottom: 1px solid $gray-300;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
 
         &:nth-child(1) {
           z-index: 11;
@@ -95,8 +92,8 @@ main {
 
     tr th:not(:nth-child(1)),
     tr td:not(:nth-child(1)) {
-      min-width: 100px;
-      max-width: 100px;
+      min-width: 150px;
+      max-width: 150px;
       overflow: hidden;
     }
   }
