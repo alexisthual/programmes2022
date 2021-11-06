@@ -6,7 +6,7 @@ interface Props {
 
 const SettingsButton: React.FC<Props> = ({ onClick }) => (
   <div
-    className="cursor-pointer z-20 p-2 absolute bottom-3 right-3 rounded-full bg-gray-200 text-blue-500"
+    className="cursor-pointer z-20 p-2 absolute bottom-3 right-3 rounded-full bg-gray-200 text-blue-500 ring ring-blue-300"
     onClick={onClick}
     onKeyDown={onClick}
     role="button"

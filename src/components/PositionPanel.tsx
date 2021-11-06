@@ -10,7 +10,7 @@ interface Props {
 const PositionPanel: React.FC<Props> = ({ onClose, position }) => (
   <div className="z-30 absolute top-0 left-0 w-screen h-screen bg-gray-100 p-4">
     <div
-      className="cursor-pointer z-20 p-2 absolute top-3 right-3 rounded-full bg-gray-200 text-blue-500"
+      className="cursor-pointer z-20 p-2 absolute top-3 right-3 rounded-full bg-gray-200 text-blue-500 ring ring-blue-300"
       onClick={onClose}
       onKeyDown={onClose}
       role="button"
