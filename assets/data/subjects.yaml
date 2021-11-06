@@ -1,25 +1,25 @@
 - title: "Transition écologique"
   subjects:
     - id: "0100"
-      label: Pour sortir du nucléaire ?
+      label: Énergie nucléaire
 - title: "Finances publiques"
   subjects:
     - id: "0300"
-      label: Pour l'Impôt de Solidarité sur la Fortune ?
+      label: Impôt de Solidarité sur la Fortune
     - id: "0400"
-      label: Pour un Revenu Universel ?
+      label: Revenu Universel
 - title: "Travail et emploi"
   subjects:
     - id: "0500"
-      label: Pour revaloriser le SMIC ?
+      label: Revaloriser du SMIC
 - title: "Immigration"
   subjects:
     - id: "0000"
-      label: Pour réduire l'immigration ?
+      label: Immigration
 - title: "Chasse"
   subjects:
     - id: "0200"
-      label: Pour le maintien de la chasse ?
+      label: Chasse
 - title: "Nouveau domaine"
   subjects:
     - id: "0600"
