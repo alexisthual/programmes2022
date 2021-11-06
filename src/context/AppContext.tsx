@@ -45,6 +45,10 @@ class AppContextProvider extends React.Component {
     this.state = {
       ...defaultState,
       ...params,
+      // Correctly cast some parameters
+      ...(`simplified` in params
+        ? { simplified: params.simplified === `true` }
+        : {}),
     };
   }
 
