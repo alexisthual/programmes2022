@@ -17,7 +17,7 @@ const Table: React.FC<Props> = ({ candidates, rows, positions }) => {
   const positionPerKey = Object.assign(
     {},
     ...positions.map((position: Position) => ({
-      [`${position.candidate_id}_${position.subject_id}`]: position,
+      [`${position.candidateId}_${position.subjectId}`]: position,
     })),
   );
 

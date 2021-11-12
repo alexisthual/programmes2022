@@ -11,8 +11,8 @@ export interface Subject {
 }
 
 export interface Position {
-  candidate_id: string;
-  subject_id: string;
+  candidateId: string;
+  subjectId: string;
   rank: number;
   text: string;
   sources?: Source[];

@@ -8,6 +8,15 @@ body {
   position: relative;
 }
 
+a {
+  color: $blue-500;
+  border-bottom: 1px dashed;
+
+  &:visited {
+    color: $purple-500;
+  }
+}
+
 #simplified-toggle {
   .dot {
     transform: translateX(0%);
@@ -94,6 +103,21 @@ main {
       min-width: 150px;
       max-width: 150px;
       overflow: hidden;
+    }
+  }
+}
+
+#position-panel {
+  padding-top: 2em;
+
+  .source {
+    padding: 1em;
+
+    &:nth-of-type(2n) {
+      background-color: $blueGray-200;
+    }
+    &:nth-of-type(2n + 1) {
+      background-color: $blueGray-100;
     }
   }
 }

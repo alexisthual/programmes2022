@@ -14,9 +14,11 @@ const Home: React.FC<PageProps> = ({ data }) => {
   );
 
   const tableRows: Subject[] = [];
+  const subjects: Subject[] = [];
   data.allSubjectsYaml.edges.forEach((node: any) => {
     tableRows.push({ isDomain: true, label: node.node.title });
     node.node.subjects.forEach((subject: Subject) => {
+      subjects.push(subject);
       tableRows.push({ isDomain: false, ...subject });
     });
   });
@@ -25,20 +27,34 @@ const Home: React.FC<PageProps> = ({ data }) => {
     const info = node.node.parent.name.split(`_`);
     return {
       ...node.node,
-      candidate_id: info[0],
-      subject_id: info[1],
+      candidateId: info[0],
+      subjectId: info[1],
     };
   });
 
   const positionsPerKey = Object.assign(
     {},
     ...positions.map((position: Position) => ({
-      [`${position.candidate_id}_${position.subject_id}`]: position,
+      [`${position.candidateId}_${position.subjectId}`]: position,
     })),
   );
 
   const [showSettings, setShowSettings] = useState(false);
   const { positionId, deleteContextKey } = React.useContext(AppContext);
+
+  let positionCandidate = null;
+  let positionSubject = null;
+
+  if (positionId !== undefined) {
+    positionCandidate = candidates.filter(
+      (candidate: Candidate) =>
+        candidate.yamlId === positionsPerKey[positionId].candidateId,
+    )[0].name;
+    positionSubject = subjects.filter(
+      (subject: Subject) =>
+        subject.id === positionsPerKey[positionId].subjectId,
+    )[0].label;
+  }
 
   return (
     <main className="flex flex-col">
@@ -50,6 +66,8 @@ const Home: React.FC<PageProps> = ({ data }) => {
       {positionId !== undefined ? (
         <PositionPanel
           position={positionsPerKey[positionId]}
+          candidate={positionCandidate}
+          subject={positionSubject}
           onClose={() => deleteContextKey(`positionId`)}
         />
       ) : null}

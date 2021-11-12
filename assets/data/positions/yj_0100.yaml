@@ -1,6 +1,7 @@
 rank: -1
-text: "text test"
+text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 sources:
   - date: 2002-12-20
-    url: https://google.com
+    # url: https://youtu.be/C5GfQmM38tw?t=707
+    url: https://www.youtube.com/embed/C5GfQmM38tw?start=707
     description: "Description de la source"
