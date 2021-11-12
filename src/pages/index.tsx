@@ -85,7 +85,7 @@ export const query = graphql`
           rank
           text
           sources {
-            date
+            date(formatString: "ddd DD MMMM YYYY", locale: "fr")
             url
             description
           }
